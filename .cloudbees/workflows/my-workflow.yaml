@@ -17,10 +17,12 @@ jobs:
         uses: cloudbees-io/perforce-klocwork-sast-plugin@v2
         with:
           url: ${{ vars.KLOCWORK_URL }}
-          token: ${{ secrets.NEW_KLOCWORK_APP_TOKEN }}
+          password: ${{ secrets.KLOCWORK_PASSWORD }}
           license-host: 54.162.178.237
           username: ${{ vars.KLOCWORK_USERNAME }}
           build-tool: maven
-          enable-local-scan: true
+          enable-local-scan: false
+          enable-agent-scan: false
+          build-directory: app
 on:
   workflow_dispatch:
