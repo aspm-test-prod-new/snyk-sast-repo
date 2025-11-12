@@ -14,7 +14,7 @@ jobs:
           ref: main
       - id: klocwork-step
         name: perforce klocwork scan
-        uses: cloudbees-io/perforce-klocwork-sast-plugin@v1
+        uses: cloudbees-io/perforce-klocwork-sast-plugin@v2
         with:
           url: ${{ vars.KLOCWORK_URL }}
           token: ${{ secrets.NEW_KLOCWORK_APP_TOKEN }}
